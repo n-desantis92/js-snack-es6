@@ -36,10 +36,8 @@
 const lista = ["pomodori","carote","sedano","cipolla","salvia"];
 
 function arrayInterval(array,min,max) {
-  let newArray = array.filter((element,i) => i >= min && i <=max);
-  console.log(newArray);
-  return newArray;
-}
+  return array.filter((element,i) => i >= min && i <= max);
+};
 
 const nellaLista = arrayInterval(lista,1,3);
 console.log(nellaLista);

@@ -94,13 +94,25 @@ console.log(squadre);
 
 // Generare numeri random al posto degli 0 nelle proprietà:
 
-for (var i = 0; i < squadre.length; i++) {
+// for (var i = 0; i < squadre.length; i++) {
+//
+//   squadre[i].punti = generaNumeroRandom(0,3);
+//   squadre[i].falli = generaNumeroRandom(0,12);
+//   console.log(squadre[i]);
+//
+// };
 
-  squadre[i].punti = generaNumeroRandom(0,3);
-  squadre[i].falli = generaNumeroRandom(0,12);
-  console.log(squadre[i]);
+// con .map()
 
-};
+const squadre2 = squadre.map((element) => {
+  element.punti = generaNumeroRandom(0,3);
+  element.falli = generaNumeroRandom(0,12);
+  // let {nome, falli} = element;
+  // return {nome,falli};
+  return {nome:element.nome, falli: element.falli};
+});
+console.log(squadre2);
+
 
 /*Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.*/
 
@@ -111,7 +123,7 @@ for (var i = 0; i < squadre.length; i++) {
   let {nome,falli} = squadre[i];
   console.log(nome,falli);
   falliSquadra.push(`la ${nome} a subito ${falli} falli`);
-}
+};
 
 console.log(falliSquadra);
 
